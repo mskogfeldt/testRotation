@@ -1,3 +1,5 @@
+package domain;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ public class Player {
     private String playerName = "";
     private List<Card> hand = new ArrayList<>();
     private Card playedCard;
+    private int rankingPointForPlayingOrder = 0;
 
 
   private Player(String playerName) {
@@ -26,12 +29,28 @@ public class Player {
         return points;
     }
 
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
     public int getStick() {
         return stick;
     }
 
+    public void setStick(int stick) {
+        this.stick = stick;
+    }
+
     public List<Card> getHand() {
         return hand;
+    }
+
+    public int getRankingPointForPlayingOrder(){
+      return rankingPointForPlayingOrder;
+    }
+
+    public void setRankingPointForPlayingOrder(int rankingPointForPlayingOrder) {
+        this.rankingPointForPlayingOrder = rankingPointForPlayingOrder;
     }
 
     public String getPlayerName() {
@@ -49,7 +68,6 @@ public class Player {
     public void playCard(int index){
         playedCard = discard(index);
     }
-
 
     public static Builder builder(){
   return new Builder();

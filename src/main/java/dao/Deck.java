@@ -1,3 +1,7 @@
+package dao;
+
+import domain.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,7 +28,7 @@ public class Deck {
     for (int i = 2; i < 15; i++){
         deckOfCards.add(new Hearts(i));
         deckOfCards.add(new Spades(i));
-        deckOfCards.add(new Dimonds(i));
+        deckOfCards.add(new Diamonds(i));
         deckOfCards.add(new Clubs(i));
         }
 
