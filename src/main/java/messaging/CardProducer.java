@@ -11,7 +11,7 @@ public class CardProducer {
         this.queue = queue;
     }
 
-    public void create(Card card){
+    public void produce(Card card){
         queue.add(card);
     }
 }

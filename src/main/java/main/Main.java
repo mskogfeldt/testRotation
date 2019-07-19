@@ -4,34 +4,22 @@ import domain.Card;
 import io.UserIO;
 import messaging.CardConsumer;
 import messaging.CardProducer;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class Main {
     public static void main(String[] args) {
-        UserIO userIO = new UserIO();
-        BlockingDeque <Card> blockingDeque = new LinkedBlockingDeque<>();
 
-        CardProducer cardProducer = new CardProducer(blockingDeque);
-
-        //CardPrinter cardPrinter = new CardPrinter();
-
-        Game game = new Game(userIO, cardProducer);
+        ApplicationContext context = new GenericXmlApplicationContext("beansUserIO.xml");
+        Game game = context.getBean(Game.class);
         game.startAGame();
-        game.startARound();
-        CardConsumer cardConsumer = new CardConsumer(blockingDeque, userIO);
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
-        cardConsumer.consumeCard();
+
+
+
+
     }
 
 

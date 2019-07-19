@@ -17,6 +17,7 @@ public class Player {
     this.playerName = playerName;
   }
 
+
     public int getGuess() {
         return guess;
     }
@@ -57,6 +58,10 @@ public class Player {
         return playerName;
     }
 
+    public Card getPlayedCard() {
+        return playedCard;
+    }
+
     public void addCardToHand(Card card){
         hand.add(card);
     }
@@ -66,7 +71,7 @@ public class Player {
     }
 
     public void playCard(int index){
-        playedCard = discard(index);
+      playedCard = discard(index);
     }
 
     public static Builder builder(){

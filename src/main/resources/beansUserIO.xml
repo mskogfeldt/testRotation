@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "UserIO" class="io.UserIO"/>
+    <bean id = "Game" class="main.Game">
+        <constructor-arg name="userIO" ref="UserIO"/>
+        <constructor-arg name="queue" ref="Queue"/>
+        <constructor-arg name="trumfGame" value="false"/>
+    </bean>
+    <bean id="Queue" class="java.util.concurrent.LinkedBlockingDeque"/>
+
+
+
+</beans>

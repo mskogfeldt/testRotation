@@ -21,7 +21,7 @@ public class Deck {
     }
 
     public Card dealACard(){
-        return deckOfCards.remove(0);
+            return deckOfCards.remove(0);
     }
 
     public void generateDeck(){

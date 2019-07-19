@@ -1,6 +1,7 @@
 package messaging;
 
 import domain.Card;
+import domain.Player;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
@@ -16,12 +17,12 @@ public class CardConsumer {
     }
 
 
-    public void consumeCard(){
+    public void consumeCard(Player player){
         try {
 
-            Card card = queue.poll(10000, TimeUnit.MILLISECONDS);
+            Card card = queue.poll(100, TimeUnit.MILLISECONDS);
             if(card != null) {
-                cardListener.onCard(card);
+                cardListener.onCard(card, player);
             }
 
         } catch (InterruptedException e) {
