@@ -16,7 +16,14 @@ public class Main {
         ApplicationContext context = new GenericXmlApplicationContext("beansUserIO.xml");
         Game game = context.getBean(Game.class);
         game.startAGame();
-
+        /*
+        UserIO userIO = new UserIO();
+        LinkedBlockingDeque <Card> linkedBlockingDeque = new LinkedBlockingDeque<>();
+        boolean trumfGame = true;
+        Game game = new Game(userIO, linkedBlockingDeque, trumfGame);
+        game.startAGame();
+        
+         */
 
 
 
